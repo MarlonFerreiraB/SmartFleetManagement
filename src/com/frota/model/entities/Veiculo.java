@@ -1,6 +1,7 @@
 package com.frota.model.entities;
 
 import com.frota.enums.StatusVeiculos;
+import com.frota.enums.TipoCombustivel;
 
 import java.text.DecimalFormat;
 import java.util.UUID;
@@ -10,14 +11,16 @@ public  class Veiculo {
     protected String marca, modelo;
     protected int ano;
     protected double quilometrageOuHorasUso;
+    protected TipoCombustivel tipoCombustivel;
 
     public Veiculo(){}
 
-    public Veiculo( String marca, String modelo,int ano, double quilometrageOuHorasUso){
+    public Veiculo( String marca, String modelo,int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel){
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.quilometrageOuHorasUso = quilometrageOuHorasUso;
+        this.tipoCombustivel = tipoCombustivel;
     }
 
     public String getId() {
