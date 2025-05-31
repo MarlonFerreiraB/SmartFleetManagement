@@ -1,12 +1,14 @@
 package com.frota.model.entities;
 
+import com.frota.enums.TipoCombustivel;
+
 import java.text.DecimalFormat;
 
 public class Moto extends Veiculo{
     private int cilindrada;
     private int consumoKML;
-    public Moto(String marca, String modelo,int ano, double quilometrageOuHorasUso, int cilindrada, int consumoKML){
-        super(marca, modelo, ano, quilometrageOuHorasUso);
+    public Moto(String marca, String modelo, int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int cilindrada, int consumoKML){
+        super(marca, modelo, ano, quilometrageOuHorasUso,tipoCombustivel);
         this.cilindrada = cilindrada;
         //colocar um erro o tanque de uma moto cabe entre 12 a 20
         this.consumoKML = consumoKML;
