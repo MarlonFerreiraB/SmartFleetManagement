@@ -2,6 +2,7 @@ package com.frota.model.entities;
 
 import com.frota.enums.StatusVeiculos;
 
+import java.text.DecimalFormat;
 import java.util.UUID;
 
 public  class Veiculo {
@@ -39,8 +40,9 @@ public  class Veiculo {
         return quilometrageOuHorasUso;
     }
 
-    public double calcularConsumoComustivel(double distancia){
-        return distancia;
+    public String calcularConsumoComustivel(double distancia){
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        return "";
     }
 
     public void atualizarStatus(StatusVeiculos novoStatus){
