@@ -5,7 +5,6 @@ import com.frota.enums.TipoCombustivel;
 import java.text.DecimalFormat;
 
 public class Carro extends Veiculo{
-    private TipoCombustivel tipoCombustivel;
     private int consumoKML;
     private int numeroPortas;
 
