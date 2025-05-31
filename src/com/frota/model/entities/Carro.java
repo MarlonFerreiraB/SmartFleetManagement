@@ -9,10 +9,9 @@ public class Carro extends Veiculo{
     private int consumoKML;
     private int numeroPortas;
 
-    public Carro(int quantidadeLitros){this.quantidadeLitros = quantidadeLitros;}
 
     public Carro(String marca, String modelo,int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int consumoKML, int numeroPortas){
-        super(marca, modelo, ano, quilometrageOuHorasUso);
+        super(marca, modelo, ano, quilometrageOuHorasUso, tipoCombustivel);
         this.tipoCombustivel = tipoCombustivel;
         //colocar um erro o tanque de uma moto cabe entre 40 a 115
         this.consumoKML = consumoKML;
