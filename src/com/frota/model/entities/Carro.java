@@ -5,15 +5,14 @@ import com.frota.enums.TipoCombustivel;
 import java.text.DecimalFormat;
 
 public class Carro extends Veiculo{
-    private int consumoKML;
+    private String consumoKML;
     private int numeroPortas;
 
 
-    public Carro(String marca, String modelo,int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int consumoKML, int numeroPortas){
+    public Carro(String marca, String modelo,int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int numeroPortas){
         super(marca, modelo, ano, quilometrageOuHorasUso, tipoCombustivel);
         this.tipoCombustivel = tipoCombustivel;
         //colocar um erro o tanque de uma moto cabe entre 40 a 115
-        this.consumoKML = consumoKML;
         this.numeroPortas = numeroPortas;
     }
 
@@ -21,7 +20,7 @@ public class Carro extends Veiculo{
         return tipoCombustivel;
     }
 
-    public int getconsumoKML() {
+    public String getconsumoKML() {
         return consumoKML;
     }
 
@@ -30,10 +29,9 @@ public class Carro extends Veiculo{
     }
 
     @Override
-        public String calcularConsumoComustivel(double distancia){
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String df = decimalFormat.format(distancia / this.consumoKML);
-        return df;
+    public String calcularConsumoComustivel(int distancia,double totalDeCombustivel){
+        this.consumoKML = super.calcularConsumoComustivel(distancia,totalDeCombustivel);
+        return super.calcularConsumoComustivel(distancia,totalDeCombustivel);
     }
 
     @Override

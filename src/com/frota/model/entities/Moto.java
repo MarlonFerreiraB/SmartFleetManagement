@@ -6,15 +6,14 @@ import java.text.DecimalFormat;
 
 public class Moto extends Veiculo{
     private int cilindrada;
-    private int consumoKML;
-    public Moto(String marca, String modelo, int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int cilindrada, int consumoKML){
+    private String consumoKML;
+    public Moto(String marca, String modelo, int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int cilindrada){
         super(marca, modelo, ano, quilometrageOuHorasUso,tipoCombustivel);
         this.cilindrada = cilindrada;
         //colocar um erro o tanque de uma moto cabe entre 12 a 20
-        this.consumoKML = consumoKML;
     }
 
-    public int getQuantidadeLitros() {
+    public String getConsumoKML() {
         return consumoKML;
     }
 
@@ -22,10 +21,9 @@ public class Moto extends Veiculo{
         return cilindrada;
     }
     @Override
-    public String calcularConsumoComustivel(double distancia){
-        DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        String df = decimalFormat.format(distancia / this.consumoKML);
-        return df;
+    public String calcularConsumoComustivel(int distancia,double totalDeCombustivel){
+        this.consumoKML = super.calcularConsumoComustivel(distancia,totalDeCombustivel);
+        return super.calcularConsumoComustivel(distancia,totalDeCombustivel);
     }
 
     @Override

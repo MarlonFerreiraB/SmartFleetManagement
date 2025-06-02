@@ -43,9 +43,10 @@ public  class Veiculo {
         return quilometrageOuHorasUso;
     }
 
-    public String calcularConsumoComustivel(double distancia){
+    public String calcularConsumoComustivel(int distancia, double totalDeCombustivel){
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
-        return "";
+        String df = decimalFormat.format(tipoCombustivel.calculaGastoCombustivel(distancia, totalDeCombustivel));
+        return df;
     }
 
     public void atualizarStatus(StatusVeiculos novoStatus){
