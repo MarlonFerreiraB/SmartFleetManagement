@@ -3,16 +3,17 @@ package com.frota.model.entities;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public class Manutencao {
+public class CustoOperacional {
     private String id = UUID.randomUUID().toString();
     private LocalDate data;
-    private String descricao;
+    private String descricao, tipoCusto;
     private double valor;
     private Veiculo veiculoAssociado;
 
-    public Manutencao(LocalDate data, String descricao, double valor,Veiculo veiculoAssociado){
+    public CustoOperacional(LocalDate data, String descricao, String tipoCusto, double valor,Veiculo veiculoAssociado){
         this.data = data;
         this.descricao =descricao;
+        this.tipoCusto = tipoCusto;
         this.valor = valor;
         this.veiculoAssociado = veiculoAssociado;
     }
@@ -27,6 +28,10 @@ public class Manutencao {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public String getTipoCusto() {
+        return tipoCusto;
     }
 
     public double getValor() {
