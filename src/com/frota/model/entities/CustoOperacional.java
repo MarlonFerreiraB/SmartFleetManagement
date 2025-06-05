@@ -41,4 +41,16 @@ public class CustoOperacional {
     public Veiculo getVeiculoAssociado() {
         return veiculoAssociado;
     }
+
+    @Override
+    public String toString() {
+        return "CustoOperacional{" +
+                "id='" + id + '\'' +
+                ", data=" + data +
+                ", descricao='" + descricao + '\'' +
+                ", tipoCusto='" + tipoCusto + '\'' +
+                ", valor=" + valor +
+                ", veiculoAssociado=" + veiculoAssociado +
+                '}';
+    }
 }
