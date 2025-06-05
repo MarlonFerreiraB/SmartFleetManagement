@@ -7,13 +7,13 @@ public class Manutencao {
     private String id = UUID.randomUUID().toString();
     private LocalDate data;
     private String descricao;
-    private double valor;
+    private double valorTotal;
     private Veiculo veiculoAssociado;
 
     public Manutencao(LocalDate data, String descricao, double valor,Veiculo veiculoAssociado){
         this.data = data;
         this.descricao =descricao;
-        this.valor = valor;
+        this.valorTotal = valor;
         this.veiculoAssociado = veiculoAssociado;
     }
 
@@ -30,7 +30,7 @@ public class Manutencao {
     }
 
     public double getValor() {
-        return valor;
+        return valorTotal;
     }
 
     public Veiculo getVeiculoAssociado() {
