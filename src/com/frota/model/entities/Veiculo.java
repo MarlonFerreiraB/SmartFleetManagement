@@ -12,6 +12,7 @@ public  class Veiculo {
     protected int ano;
     protected double quilometrageOuHorasUso;
     protected TipoCombustivel tipoCombustivel;
+    protected StatusVeiculos statusVeiculos;
 
     public Veiculo(){}
 
