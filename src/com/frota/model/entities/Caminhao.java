@@ -3,19 +3,21 @@ package com.frota.model.entities;
 import com.frota.enums.TipoCombustivel;
 import com.frota.interfaces.Manutenivel;
 import com.frota.interfaces.PreditorManutencao;
+import com.frota.interfaces.RastreadorCusto;
 
 import javax.annotation.processing.SupportedSourceVersion;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Caminhao extends  Veiculo implements Manutenivel, PreditorManutencao {
+public class Caminhao extends  Veiculo implements Manutenivel, PreditorManutencao, RastreadorCusto {
     private double capacidadeTon;
     private int eixos;
     private String consumoKML;
     private double quilometragemUltimaManutencao;
     private LocalDate dataUltimaManutencao;
-    private List<Manutencao> histoicoManutencao;
+    private List<Manutencao> histoicoManutencao = new ArrayList<>();
 
     public Caminhao(String marca, String modelo, int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, double capacidadeTon, int eixos, double quilometragemUltimaManutencao, LocalDate dataUltimaManutencao) {
         super(marca, modelo, ano, quilometrageOuHorasUso, tipoCombustivel);
@@ -82,6 +84,19 @@ public class Caminhao extends  Veiculo implements Manutenivel, PreditorManutenca
     }
 
     //PreditorManutencao
+
+    //RastreadorCusto
+
+    @Override
+    public double calcularCustosTotais() {
+        double total = 0;
+        for(CustoOperacional c: getOperacionalList()){
+            total += c.getValor();
+        }
+        return total;
+    }
+
+    //RastreadorCusto
 
     @Override
     public String toString() {

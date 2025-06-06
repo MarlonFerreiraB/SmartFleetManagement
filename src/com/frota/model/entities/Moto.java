@@ -3,17 +3,19 @@ package com.frota.model.entities;
 import com.frota.enums.TipoCombustivel;
 import com.frota.interfaces.Manutenivel;
 import com.frota.interfaces.PreditorManutencao;
+import com.frota.interfaces.RastreadorCusto;
 
 import java.text.DecimalFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Moto extends Veiculo implements Manutenivel, PreditorManutencao {
+public class Moto extends Veiculo implements Manutenivel, PreditorManutencao, RastreadorCusto {
     private int cilindrada;
     private String consumoKML;
     private double quilometragemUltimaManutencao;
     private LocalDate dataUltimaManutencao;
-    private List<Manutencao> histoicoManutencao;
+    private List<Manutencao> histoicoManutencao = new ArrayList<>();
 
     public Moto(String marca, String modelo, int ano, double quilometrageOuHorasUso, TipoCombustivel tipoCombustivel, int cilindrada,double quilometragemUltimaManutencaom, LocalDate dataUltimaManutencao){
         super(marca, modelo, ano, quilometrageOuHorasUso,tipoCombustivel);
@@ -92,6 +94,19 @@ public class Moto extends Veiculo implements Manutenivel, PreditorManutencao {
     }
 
     //PreditorManutencao
+
+    //RastreadorCusto
+
+    @Override
+    public double calcularCustosTotais() {
+        double total = 0;
+        for(CustoOperacional c: getOperacionalList()){
+            total += c.getValor();
+        }
+        return total;
+    }
+
+    //RastreadorCusto
 
     @Override
     public String toString() {
