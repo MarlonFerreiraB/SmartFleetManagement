@@ -9,7 +9,7 @@ public enum TipoCombustivel implements ImplementCalcCombustivel {
             return distanciaPecorrida/ totalLitros;
         }
     },
-    DISEL{
+    DIESEL{
         @Override
         public double calculaGastoCombustivel(int distanciaPecorrida, double totalLitros) {
             double calculo = distanciaPecorrida / totalLitros * 0.2;
