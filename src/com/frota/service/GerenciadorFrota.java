@@ -128,4 +128,10 @@ public class GerenciadorFrota {
             }
         }
     }
+
+    public void listarVeiculos() {
+        for(Veiculo v: frota){
+            v.toString();
+        }
+    }
 }
